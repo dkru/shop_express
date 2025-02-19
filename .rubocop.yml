@@ -1,0 +1,5 @@
+Metrics/BlockLength:
+  IgnoredMethods: [describe]
+
+AllCops:
+  NewCops: enable
