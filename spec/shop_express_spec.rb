@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe Horoshop::Client do
+describe ShopExpress::Client do
   subject { described_class.new(params) }
 
   let(:url) { 'http://api.horosop.com' }
@@ -47,16 +47,16 @@ describe Horoshop::Client do
   end
 
   describe '#refresh_token!' do
-    let(:auth) { instance_double(Horoshop::Authorization) }
+    let(:auth) { instance_double(ShopExpress::Authorization) }
 
     before do
-      allow(Horoshop::Authorization).to receive(:new).with(subject).and_return(auth)
+      allow(ShopExpress::Authorization).to receive(:new).with(subject).and_return(auth)
       allow(auth).to receive(:authorize)
     end
 
-    it 'calls authorize on a new Horoshop::Authorization instance' do
+    it 'calls authorize on a new ShopExpress::Authorization instance' do
       subject.refresh_token!
-      expect(Horoshop::Authorization).to have_received(:new).with(subject)
+      expect(ShopExpress::Authorization).to have_received(:new).with(subject)
       expect(auth).to have_received(:authorize)
     end
 
@@ -71,7 +71,7 @@ describe Horoshop::Client do
         end
       end
 
-      it 'updates the token and expiration_timestamp on the Horoshop instance' do
+      it 'updates the token and expiration_timestamp on the ShopExpress instance' do
         expect { subject.refresh_token! }.to change(subject, :token).from(nil)
                                                                     .to(new_token)
                                                                     .and change(subject, :expiration_timestamp)

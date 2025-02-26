@@ -2,8 +2,8 @@
 
 require 'spec_helper'
 
-describe Horoshop::ImportResiduences do
-  let(:horoshop) do
+describe ShopExpress::ImportResiduences do
+  let(:shop_express) do
     double(:client, url: URI.parse('http://t.com'), login: '', password: '', token: '', token_valid?: true)
   end
 
@@ -16,7 +16,7 @@ describe Horoshop::ImportResiduences do
       )
   end
 
-  subject { described_class.new(horoshop) }
+  subject { described_class.new(shop_express) }
 
   context 'when valid response received' do
     let(:body) do
@@ -47,7 +47,7 @@ describe Horoshop::ImportResiduences do
             "log": [
               {"article": "00090001", "status": "OK", "message": "UPDATED"},
               {"article": "00090002", "status": "OK", "message": "UPDATED"},
-              {"article": "00090003", "status": "ERROR", "message": "Warehouse affice is not defined"}
+              {"article": "00090003", "status": "ERROR", "message": "Warehouse office is not defined"}
             ]
           }
         }
@@ -56,7 +56,7 @@ describe Horoshop::ImportResiduences do
 
     it 'return hash' do
       expect(subject.call({})).to eq [
-        { 'article' => '00090003', 'status' => 'ERROR', 'message' => 'Warehouse affice is not defined' }
+        { 'article' => '00090003', 'status' => 'ERROR', 'message' => 'Warehouse office is not defined' }
       ]
     end
   end

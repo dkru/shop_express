@@ -2,16 +2,16 @@
 
 require 'spec_helper'
 
-class HoroshopConnection
-  include Horoshop::Connection
+class ShopExpressConnection
+  include ShopExpress::Connection
 end
 
-describe Horoshop::Connection do
-  let(:horoshop) do
+describe ShopExpress::Connection do
+  let(:shop_express) do
     double(:client, url: URI.parse('http://t.com'), login: '', password: '', token: '')
   end
 
-  subject  { HoroshopConnection.new }
+  subject  { ShopExpressConnection.new }
 
   describe '#post' do
     let(:url) { '/api/test' }
@@ -28,7 +28,7 @@ describe Horoshop::Connection do
       end
 
       it 'returns a success response' do
-        response = subject.post(horoshop: horoshop, url: url, body: body)
+        response = subject.post(shop_express: shop_express, url: url, body: body)
         expect(response).to include('status' => 'OK')
       end
     end
@@ -40,8 +40,8 @@ describe Horoshop::Connection do
       end
 
       it 'returns a server error message' do
-        response = subject.post(horoshop: horoshop, url: url, body: body)
-        expect(response).to eq(Horoshop::Connection::ERROR)
+        response = subject.post(shop_express: shop_express, url: url, body: body)
+        expect(response).to eq(ShopExpress::Connection::ERROR)
       end
     end
 
@@ -52,8 +52,8 @@ describe Horoshop::Connection do
       end
 
       it 'returns a server error message' do
-        response = subject.post(horoshop: horoshop, url: url, body: body)
-        expect(response).to eq(Horoshop::Connection::ERROR)
+        response = subject.post(shop_express: shop_express, url: url, body: body)
+        expect(response).to eq(ShopExpress::Connection::ERROR)
       end
     end
   end
@@ -71,25 +71,25 @@ describe Horoshop::Connection do
 
     context 'when refresh token not needed' do
       it 'does not call refresh token' do
-        allow(horoshop).to receive(:token_valid?) { true }
-        expect(horoshop).not_to receive(:refresh_token!) { true }
-        subject.post(horoshop: horoshop, url: url, body: {}, add_token: true)
+        allow(shop_express).to receive(:token_valid?) { true }
+        expect(shop_express).not_to receive(:refresh_token!) { true }
+        subject.post(shop_express: shop_express, url: url, body: {}, add_token: true)
       end
     end
 
     context 'when refresh token needed' do
       it 'just call refresh token' do
-        allow(horoshop).to receive(:token_valid?) { false }
-        expect(horoshop).to receive(:refresh_token!) { true }
-        subject.post(horoshop: horoshop, url: url, body: {}, add_token: true)
+        allow(shop_express).to receive(:token_valid?) { false }
+        expect(shop_express).to receive(:refresh_token!) { true }
+        subject.post(shop_express: shop_express, url: url, body: {}, add_token: true)
       end
     end
 
     it 'token added to object' do
-      allow(horoshop).to receive(:token_valid?) { true }
-      allow(horoshop).to receive(:refresh_token!)
+      allow(shop_express).to receive(:token_valid?) { true }
+      allow(shop_express).to receive(:refresh_token!)
       body = { data: 'some_data' }
-      expect { subject.mixin_token!(horoshop, body) }
+      expect { subject.mixin_token!(shop_express, body) }
         .to change { body }.to({ data: 'some_data', token: '' })
     end
   end

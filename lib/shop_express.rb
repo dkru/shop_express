@@ -10,9 +10,9 @@ module ShopExpress
   class Client
     attr_accessor :url, :login, :password, :token, :expiration_timestamp
 
-    # @param {URI} url
-    # @param {String} login
-    # @param {String}
+    # @param url [URI]
+    # @param login [String]
+    # @param password [String]
     def initialize(url:, login:, password:)
       @url = url
       @login = login
