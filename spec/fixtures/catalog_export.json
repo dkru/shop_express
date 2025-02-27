@@ -1,0 +1,118 @@
+{
+  "status": "OK",
+  "response": {
+    "products": [
+      {
+        "id": 153496,
+        "sku": null,
+        "parent_id": 396674,
+        "parent_title": {
+          "ru": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)",
+          "uk": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)",
+          "en": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)"
+        },
+        "slug": "scivation-xtend-xtend-1174-g-grape-srok-do-28-06-2020-1174-g-grape",
+        "link": "http://domain.com/catalog/scivation-xtend-xtend-1174-g-grape-srok-do-28-06-2020-1174-g-grape/",
+        "display_in_showcase": 1,
+        "price": 28.35,
+        "quantity": 0,
+        "barcode": null,
+        "condition": "New",
+        "wholesale_price": 11.00,
+        "wholesale_count": 5,
+        "price_old": null,
+        "discount": null,
+        "unit": {
+          "ru": "за 50 грамм",
+          "uk": "за 50 грам",
+          "en": "for 50 grams"
+        },
+        "title": {
+          "ru": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)",
+          "uk": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)",
+          "en": "Scivation (Xtend) Xtend (1174 g grape) срок до 28.06.2020 (1174 g, grape)"
+        },
+        "seo_title": {
+          "ru": "",
+          "uk": "",
+          "en": ""
+        },
+        "seo_keywords": {
+          "ru": "",
+          "uk": "",
+          "en": ""
+        },
+        "seo_description": {
+          "ru": "",
+          "uk": "",
+          "en": ""
+        },
+        "short_description": {
+          "ru": null,
+          "uk": null,
+          "en": null
+        },
+        "images": [],
+        "gallery_common": [],
+        "brand": {
+          "id": 199602,
+          "external_id": null,
+          "value": {
+            "ru": "Уценка",
+            "uk": "Уценка",
+            "en": "Уценка"
+          }
+        },
+        "parent": [
+          {
+            "parent_id": null,
+            "parent_external_id": null,
+            "external_id": null,
+            "id": 64291,
+            "value": {
+              "ru": "Заменители питания",
+              "uk": "Заменители питания",
+              "en": "Заменители питания"
+            }
+          }
+        ],
+        "characteristics": {
+          "ID_11432": [
+            {
+              "id": 133321,
+              "external_id": null,
+              "value": {
+                "ru": "1174 g",
+                "uk": "1174 g",
+                "en": "1174 g"
+              }
+            }
+          ],
+          "ID_11433": [
+            {
+              "id": 133322,
+              "external_id": null,
+              "value": {
+                "ru": "grape",
+                "uk": "grape",
+                "en": "grape"
+              }
+            }
+          ]
+        },
+        "stores":[
+          {
+            "id": 123,
+            "external_id": null,
+            "quantity": 21
+          },
+          {
+            "id":321,
+            "external_id": null,
+            "quantity": 4
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -8,6 +8,8 @@ module ShopExpress
     include Connection
     attr_reader :shop_express
 
+    STATUS_OK = 'OK'
+
     # @param shop_express [ShopExpress::Client]
     def initialize(shop_express)
       @shop_express = shop_express

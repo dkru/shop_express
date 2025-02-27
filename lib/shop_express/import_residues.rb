@@ -4,7 +4,6 @@ module ShopExpress
   # import_residues to the shop_express
   class ImportResiduences < ::ShopExpress::Base
     URL = 'api/catalog/importResidues/'
-    STATUS_OK = 'OK'
 
     # @param body [Hash]
     def call(body)
