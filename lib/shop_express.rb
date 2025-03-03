@@ -4,6 +4,7 @@ require_relative 'shop_express/base'
 require_relative 'shop_express/connection'
 require_relative 'shop_express/authorization'
 require_relative 'shop_express/import_residues'
+require_relative 'shop_express/catalog_export'
 
 module ShopExpress
   # Base class used to store data about authentication
