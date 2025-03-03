@@ -16,7 +16,7 @@ describe ShopExpress::Client do
     context 'when token is present and not expired' do
       before do
         subject.token = '2sgv458'
-        subject.expiration_timestamp = Time.now - 400
+        subject.expiration_timestamp = Time.now + 400
       end
 
       it 'returns true' do
@@ -27,7 +27,7 @@ describe ShopExpress::Client do
     context 'when token is present but expired' do
       before do
         subject.token = '2sgv458'
-        subject.expiration_timestamp = Time.now + 700
+        subject.expiration_timestamp = Time.now - 1
       end
 
       it 'returns false' do

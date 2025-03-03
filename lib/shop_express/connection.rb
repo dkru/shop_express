@@ -9,7 +9,8 @@ module ShopExpress
     def post(shop_express:, url:, body:, add_token: false)
       mixin_token!(shop_express, body) if add_token
       connection(shop_express).post(url, body).body
-    rescue Faraday::Error
+    rescue Faraday::Error => e
+      Rails.logger.error(e) if defined?(Rails)
       ERROR
     end
 

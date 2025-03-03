@@ -3,12 +3,12 @@
 module ShopExpress
   # get list of the products from the shop_express
   class CatalogExport < ::ShopExpress::Base
-    URL = 'api/catalog/export'
+    URL = '/api/catalog/export'
 
     # @param limit [Integer]
     # @param offset [Integer]
     # @param display_in_show_case [String] possible values (false, true)
-    def call(limit: 5000, offset: 0, display_in_show_case: 'false')
+    def call(limit: 500, offset: 0, display_in_show_case: 'false')
       request_body = {
         limit: limit,
         offset: offset,

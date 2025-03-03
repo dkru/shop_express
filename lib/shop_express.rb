@@ -25,7 +25,7 @@ module ShopExpress
     def token_valid?
       return false if token.nil?
 
-      expiration_timestamp < Time.now
+      expiration_timestamp > Time.now
     end
 
     def refresh_token!
