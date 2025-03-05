@@ -2,7 +2,7 @@
 
 module ShopExpress
   # import_residues to the shop_express
-  class ImportResiduences < ::ShopExpress::Base
+  class ImportResidues < ::ShopExpress::Base
     URL = '/api/catalog/importResidues/'
 
     # @param body [Hash]

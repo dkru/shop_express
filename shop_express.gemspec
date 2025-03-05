@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'shop_express'
-  s.version     = '0.0.5'
+  s.version     = '0.0.6'
   s.summary     = 'ShopExpress API interface'
   s.description = 'Gem for exchange data with the internet shop CMS'
   s.authors     = ['Denys Krupenov']

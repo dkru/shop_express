@@ -2,7 +2,7 @@
 
 require 'spec_helper'
 
-describe ShopExpress::ImportResiduences do
+describe ShopExpress::ImportResidues do
   let(:shop_express) do
     double(:client, url: URI.parse('http://t.com'), login: '', password: '', token: '', token_valid?: true)
   end
